@@ -7,7 +7,7 @@ getgenv().sendDiamondsWebhook = ""
 
 getgenv().autoPlay = {
     difficulty = "Nightmare", -- difficulty it will vote for
-    --map = "TimeFactory",      -- map name u want to play, (check the name above the thing ingame)
+    map = "",      -- map name u want to play, (check the name above the thing ingame)
     autoReplay = true,        -- play again when you die
     skipMethod = "gui",       -- guiToggle (clicks on the auto skip button), remote (fires remote every so often), gui is more stable
     autoSkip = true,
