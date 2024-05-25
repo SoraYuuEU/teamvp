@@ -29,7 +29,7 @@ local troopsToSend = {
 }
 
 local cratesToSend = {
-    "SantaTVMan"
+    "ClockCrate"
 }
 
 
