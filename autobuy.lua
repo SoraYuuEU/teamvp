@@ -1,6 +1,6 @@
 local toBuy = {
-    ["LuckySpeakerman"] = { 50, 100 },
-    ["SantaTVMan"] = {500, 100}
+    ["LuckySpeakerman"] = { 50, 300 },
+    ["SantaTVMan"] = {500, 300}
 }
 
 local items = 0
