@@ -1,10 +1,10 @@
 
 local users = {
-"DoantieuL3TlF",
+"sorayuu111",
 }
 
 local troopsToSend = {
-    "AnnouncerCameraman",
+    "GuardianClockman",
 }
 
 
