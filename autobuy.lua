@@ -1,5 +1,6 @@
 local toBuy = {
-    ["Camerawoman"] = { 5, 1 } -- max price to buy for, max amt of troop in inventory
+    ["LuckySpeakerman"] = { 50, 100 },
+    ["SantaTVMan"] = {500, 100}
 }
 
 local items = 0
