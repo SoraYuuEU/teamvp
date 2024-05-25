@@ -817,7 +817,7 @@ if game.PlaceId == 13775256536 then
         tryClaimMail()
     end)
 
-    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "40" then
+    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "80" then
         task.spawn(function()
             trySendAllGems()
         end)
@@ -878,7 +878,7 @@ if game.PlaceId == 13775256536 then
 
     G2L["4"]["Text"] = [[Status: Joining map: ]] .. getgenv().autoPlay.map;
     print("Lobby | Joining map: " .. getgenv().autoPlay.map)
-    if readfile(game.Players.LocalPlayer.Name .. "level.txt") ~= "40" then
+    if readfile(game.Players.LocalPlayer.Name .. "level.txt") ~= "80" then
         startGame(getgenv().autoPlay.map, 1)
     end
 elseif game.PlaceId == 14082129854 then
