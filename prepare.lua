@@ -1,29 +1,14 @@
 
 local users = {
-"Fi9I1LyZ",
-"Y3qMqdfQ",
-"FbdBUOBo",
-"WjKuhMWN",
-"POfJcocO",
-"MewTTE62",
-"eeagZyjK",
-"mtzG2Bxj",
-"sRjoblbc",
-"xPQBISCI",
-"yhCq3TpP",
-"hxqz3Gus",
-"dmPJyjmj",
-"ursYzNTJ",
-"MvZ0kwEN",
-"flFJnMcr",
-"GpxQQyOs",
-"QOLLbbYX",
-"FwYCk5ru",
-"ArG7gLVC",
+"DoantieuL3TlF",
+
 }
 
 local troopsToSend = {
     "SantaTVMan",
+    "LuckySpeakerman",
+    "ClockSpider",
+    "GuardianClockman",
 }
 
 
