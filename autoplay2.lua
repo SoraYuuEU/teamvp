@@ -1,13 +1,11 @@
-
-
-getgenv().fps = 10
+getgenv().fps = 20
 
 getgenv().completedWebhook = ""
 getgenv().sendDiamondsWebhook = ""
 
 getgenv().autoPlay = {
     difficulty = "Nightmare", -- difficulty it will vote for
-    map = "",      -- map name u want to play, (check the name above the thing ingame)
+    map = "TimeFactory",      -- map name u want to play, (check the name above the thing ingame)
     autoReplay = true,        -- play again when you die
     skipMethod = "gui",       -- guiToggle (clicks on the auto skip button), remote (fires remote every so often), gui is more stable
     autoSkip = true,
@@ -21,7 +19,6 @@ getgenv().clockGift = { -- randomly selected from list
 "kVLJiBbW",
 "p3tg9go4",
 "cGAnOI1S",
-
     }
 }
 
@@ -42,10 +39,10 @@ getgenv().autoBoost = { -- this will use boosts when it runs out
 }
 
 getgenv().autoMail = {
-    enabled = true,         -- for gems
+    enabled = true,          -- for gems
     sendTroopsEnabled = true,
-    idToSendTo = 5456141384, -- for gems
-    idToSendTo2 = 5456142603,        -- this is for troops
+    idToSendTo = 5456141384,  -- for gems
+    idToSendTo2 = 5456141595, -- this is for troops
     sendGemsAfterReached = 10,
     sendOfRarity = {
         ["Legendary"] = true,
@@ -75,8 +72,9 @@ getgenv().autoSummon = {
     },
 }
 
-getgenv().macroTroops = {"SantaTVMan","LuckySpeakerman","ClockSpider"}
-local macro = '{"53":{"Type":"UpgradeTroop","Time":444,"Pos":"127.083740234375, 232.5080108642578, -4132.92236328125"},"43":{"Time":375,"Type":"VoteSkipWave"},"73":{"Type":"UpgradeTroop","Time":563,"Pos":"131.21749877929688, 232.5080108642578, -4145.23876953125"},"63":{"Rotation":"1","Type":"PlaceTroop","Time":497,"Troop":"ClockSpider","Pos":"145.77108764648438, 232.5080108642578, -4145.1435546875"},"93":{"Type":"UpgradeTroop","Time":665,"Pos":"143.8885498046875, 232.5080108642578, -4165.6884765625"},"83":{"Rotation":"1","Type":"PlaceTroop","Time":618,"Troop":"ClockSpider","Pos":"123.10147094726562, 232.50799560546875, -4159.3125"},"13":{"Type":"UpgradeTroop","Time":141,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"130":{"Time":976,"Type":"VoteSkipWave"},"23":{"Type":"UpgradeTroop","Time":204,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"42":{"Type":"UpgradeTroop","Time":363,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"52":{"Type":"UpgradeTroop","Time":442,"Pos":"127.083740234375, 232.5080108642578, -4132.92236328125"},"62":{"Type":"UpgradeTroop","Time":486,"Pos":"151.07757568359375, 232.5080108642578, -4135.8076171875"},"72":{"Time":563,"Type":"VoteSkipWave"},"82":{"Type":"UpgradeTroop","Time":610,"Pos":"131.8657989501953, 232.5080108642578, -4156.85205078125"},"92":{"Type":"UpgradeTroop","Time":665,"Pos":"143.8885498046875, 232.5080108642578, -4165.6884765625"},"122":{"Type":"UpgradeTroop","Time":851,"Pos":"154.50946044921875, 232.50802612304688, -4161.17822265625"},"129":{"Time":956,"Type":"VoteSkipWave"},"121":{"Rotation":"1","Type":"PlaceTroop","Time":849,"Troop":"ClockSpider","Pos":"154.50946044921875, 232.50802612304688, -4161.17822265625"},"12":{"Time":140,"Type":"VoteSkipWave"},"22":{"Time":201,"Type":"VoteSkipWave"},"32":{"Type":"UpgradeTroop","Time":264,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"95":{"Rotation":"1","Type":"PlaceTroop","Time":681,"Troop":"ClockSpider","Pos":"128.55316162109375, 232.5080108642578, -4165.47021484375"},"85":{"Type":"UpgradeTroop","Time":621,"Pos":"123.10147094726562, 232.50799560546875, -4159.3125"},"75":{"Rotation":"1","Type":"PlaceTroop","Time":592,"Troop":"ClockSpider","Pos":"144.75119018554688, 232.5080108642578, -4154.1884765625"},"65":{"Type":"UpgradeTroop","Time":506,"Pos":"145.77108764648438, 232.5080108642578, -4145.1435546875"},"55":{"Type":"UpgradeTroop","Time":450,"Pos":"127.083740234375, 232.5080108642578, -4132.92236328125"},"45":{"Rotation":"1","Type":"PlaceTroop","Time":382,"Troop":"ClockSpider","Pos":"136.9464111328125, 232.5080108642578, -4138.544921875"},"35":{"Type":"UpgradeTroop","Time":293,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"116":{"Rotation":"1","Type":"PlaceTroop","Time":827,"Troop":"ClockSpider","Pos":"115.73577880859375, 232.5079803466797, -4155.52490234375"},"1":{"Rotation":"1","Type":"PlaceTroop","Time":56,"Troop":"LuckySpeakerman","Pos":"85.16222381591797, 230.82907104492188, -4221.91064453125"},"3":{"Rotation":"1","Type":"PlaceTroop","Time":63,"Troop":"SantaTVMan","Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"2":{"Time":60,"Type":"VoteSkipWave"},"5":{"Rotation":"1","Type":"PlaceTroop","Time":84,"Troop":"LuckySpeakerman","Pos":"67.80104064941406, 230.8289794921875, -4175.3515625"},"4":{"Time":80,"Type":"VoteSkipWave"},"7":{"Rotation":"1","Type":"PlaceTroop","Time":100,"Troop":"SantaTVMan","Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"6":{"Time":100,"Type":"VoteSkipWave"},"25":{"Type":"UpgradeTroop","Time":211,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"8":{"Rotation":"1","Type":"PlaceTroop","Time":104,"Troop":"SantaTVMan","Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"110":{"Time":796,"Type":"VoteSkipWave"},"94":{"Time":680,"Type":"VoteSkipWave"},"74":{"Time":583,"Type":"VoteSkipWave"},"84":{"Time":619,"Type":"VoteSkipWave"},"54":{"Time":447,"Type":"VoteSkipWave"},"64":{"Type":"UpgradeTroop","Time":499,"Pos":"145.77108764648438, 232.5080108642578, -4145.1435546875"},"34":{"Type":"UpgradeTroop","Time":290,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"44":{"Type":"UpgradeTroop","Time":377,"Pos":"117.24662780761719, 232.50799560546875, -4145.09033203125"},"126":{"Time":896,"Type":"VoteSkipWave"},"102":{"Type":"UpgradeTroop","Time":718,"Pos":"115.0450439453125, 232.50799560546875, -4132.7529296875"},"101":{"Type":"UpgradeTroop","Time":717,"Pos":"115.0450439453125, 232.50799560546875, -4132.7529296875"},"14":{"Type":"UpgradeTroop","Time":145,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"24":{"Type":"UpgradeTroop","Time":205,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"128":{"Time":936,"Type":"VoteSkipWave"},"120":{"Time":836,"Type":"VoteSkipWave"},"87":{"Time":640,"Type":"VoteSkipWave"},"77":{"Type":"UpgradeTroop","Time":594,"Pos":"144.75119018554688, 232.5080108642578, -4154.1884765625"},"97":{"Type":"UpgradeTroop","Time":684,"Pos":"128.55316162109375, 232.5080108642578, -4165.47021484375"},"47":{"Type":"UpgradeTroop","Time":399,"Pos":"136.9464111328125, 232.5080108642578, -4138.544921875"},"37":{"Type":"UpgradeTroop","Time":310,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"67":{"Type":"UpgradeTroop","Time":524,"Pos":"145.77108764648438, 232.5080108642578, -4145.1435546875"},"57":{"Type":"SellTroop","Time":455,"Pos":"85.15907287597656, 230.82908630371094, -4221.91064453125"},"112":{"Type":"UpgradeTroop","Time":797,"Pos":"118.80587768554688, 232.50799560546875, -4169.4052734375"},"115":{"Time":816,"Type":"VoteSkipWave"},"111":{"Rotation":"1","Type":"PlaceTroop","Time":795,"Troop":"ClockSpider","Pos":"118.80587768554688, 232.50799560546875, -4169.4052734375"},"114":{"Type":"UpgradeTroop","Time":799,"Pos":"118.80587768554688, 232.50799560546875, -4169.4052734375"},"119":{"Type":"UpgradeTroop","Time":831,"Pos":"115.73577880859375, 232.5079803466797, -4155.52490234375"},"27":{"Type":"UpgradeTroop","Time":225,"Pos":"117.24662780761719, 232.50799560546875, -4145.09033203125"},"17":{"Type":"UpgradeTroop","Time":168,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"107":{"Type":"SellTroop","Time":786,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"86":{"Type":"UpgradeTroop","Time":622,"Pos":"123.10147094726562, 232.50799560546875, -4159.3125"},"96":{"Type":"UpgradeTroop","Time":683,"Pos":"128.55316162109375, 232.5080108642578, -4165.47021484375"},"36":{"Time":299,"Type":"VoteSkipWave"},"46":{"Type":"UpgradeTroop","Time":393,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"103":{"Type":"UpgradeTroop","Time":719,"Pos":"115.0450439453125, 232.50799560546875, -4132.7529296875"},"66":{"Time":523,"Type":"VoteSkipWave"},"106":{"Time":775,"Type":"VoteSkipWave"},"125":{"Time":876,"Type":"VoteSkipWave"},"108":{"Type":"SellTroop","Time":789,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"124":{"Time":856,"Type":"VoteSkipWave"},"16":{"Rotation":"1","Type":"PlaceTroop","Time":162,"Troop":"ClockSpider","Pos":"117.24662780761719, 232.50799560546875, -4145.09033203125"},"26":{"Time":221,"Type":"VoteSkipWave"},"100":{"Rotation":"1","Type":"PlaceTroop","Time":715,"Troop":"ClockSpider","Pos":"115.0450439453125, 232.50799560546875, -4132.7529296875"},"71":{"Type":"UpgradeTroop","Time":561,"Pos":"131.21749877929688, 232.5080108642578, -4145.23876953125"},"61":{"Time":484,"Type":"VoteSkipWave"},"51":{"Rotation":"1","Type":"PlaceTroop","Time":440,"Troop":"ClockSpider","Pos":"127.083740234375, 232.5080108642578, -4132.92236328125"},"41":{"Type":"UpgradeTroop","Time":342,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"91":{"Type":"UpgradeTroop","Time":664,"Pos":"143.8885498046875, 232.5080108642578, -4165.6884765625"},"81":{"Type":"UpgradeTroop","Time":603,"Pos":"131.8657989501953, 232.5080108642578, -4156.85205078125"},"59":{"Type":"UpgradeTroop","Time":478,"Pos":"151.07757568359375, 232.5080108642578, -4135.8076171875"},"49":{"Type":"UpgradeTroop","Time":414,"Pos":"136.9464111328125, 232.5080108642578, -4138.544921875"},"39":{"Type":"UpgradeTroop","Time":320,"Pos":"117.24662780761719, 232.50799560546875, -4145.09033203125"},"29":{"Time":241,"Type":"VoteSkipWave"},"99":{"Type":"UpgradeTroop","Time":702,"Pos":"128.55316162109375, 232.5080108642578, -4165.47021484375"},"89":{"Time":660,"Type":"VoteSkipWave"},"79":{"Rotation":"1","Type":"PlaceTroop","Time":600,"Troop":"ClockSpider","Pos":"131.8657989501953, 232.5080108642578, -4156.85205078125"},"69":{"Type":"UpgradeTroop","Time":537,"Pos":"131.21749877929688, 232.5080108642578, -4145.23876953125"},"19":{"Type":"UpgradeTroop","Time":176,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"31":{"Type":"UpgradeTroop","Time":256,"Pos":"77.67683410644531, 234.43423461914062, -4126.05224609375"},"21":{"Type":"UpgradeTroop","Time":185,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"11":{"Type":"UpgradeTroop","Time":124,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"60":{"Type":"UpgradeTroop","Time":479,"Pos":"151.07757568359375, 232.5080108642578, -4135.8076171875"},"70":{"Time":543,"Type":"VoteSkipWave"},"40":{"Time":339,"Type":"VoteSkipWave"},"50":{"Type":"UpgradeTroop","Time":433,"Pos":"136.9464111328125, 232.5080108642578, -4138.544921875"},"33":{"Time":279,"Type":"VoteSkipWave"},"80":{"Type":"UpgradeTroop","Time":602,"Pos":"131.8657989501953, 232.5080108642578, -4156.85205078125"},"90":{"Rotation":"1","Type":"PlaceTroop","Time":660,"Troop":"ClockSpider","Pos":"143.8885498046875, 232.5080108642578, -4165.6884765625"},"48":{"Time":412,"Type":"VoteSkipWave"},"58":{"Rotation":"1","Type":"PlaceTroop","Time":475,"Troop":"ClockSpider","Pos":"151.07757568359375, 232.5080108642578, -4135.8076171875"},"28":{"Type":"UpgradeTroop","Time":231,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"38":{"Time":319,"Type":"VoteSkipWave"},"88":{"Type":"UpgradeTroop","Time":642,"Pos":"123.10147094726562, 232.50799560546875, -4159.3125"},"98":{"Time":700,"Type":"VoteSkipWave"},"68":{"Rotation":"1","Type":"PlaceTroop","Time":535,"Troop":"ClockSpider","Pos":"131.21749877929688, 232.5080108642578, -4145.23876953125"},"78":{"Type":"UpgradeTroop","Time":595,"Pos":"144.75119018554688, 232.5080108642578, -4154.1884765625"},"15":{"Time":161,"Type":"VoteSkipWave"},"109":{"Type":"SellTroop","Time":792,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"105":{"Time":755,"Type":"VoteSkipWave"},"56":{"Type":"SellTroop","Time":453,"Pos":"67.79086303710938, 230.82901000976562, -4175.3515625"},"117":{"Type":"UpgradeTroop","Time":829,"Pos":"115.73577880859375, 232.5079803466797, -4155.52490234375"},"18":{"Type":"UpgradeTroop","Time":175,"Pos":"64.61773681640625, 234.43421936035156, -4125.65625"},"118":{"Type":"UpgradeTroop","Time":830,"Pos":"115.73577880859375, 232.5079803466797, -4155.52490234375"},"113":{"Type":"UpgradeTroop","Time":798,"Pos":"118.80587768554688, 232.50799560546875, -4169.4052734375"},"9":{"Type":"UpgradeTroop","Time":112,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"123":{"Type":"UpgradeTroop","Time":852,"Pos":"154.50946044921875, 232.50802612304688, -4161.17822265625"},"76":{"Type":"UpgradeTroop","Time":594,"Pos":"144.75119018554688, 232.5080108642578, -4154.1884765625"},"104":{"Time":735,"Type":"VoteSkipWave"},"20":{"Time":181,"Type":"VoteSkipWave"},"30":{"Type":"UpgradeTroop","Time":243,"Pos":"94.01478576660156, 234.4342498779297, -4125.4619140625"},"127":{"Time":916,"Type":"VoteSkipWave"},"10":{"Time":120,"Type":"VoteSkipWave"}}'
+getgenv().macroTroops = { "SantaTVMan", "LuckySpeakerman", "ClockSpider", "GuardianClockman" }
+local macro =
+'{"53":{"Type":"UpgradeTroop","Time":453,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"43":{"Time":362,"Type":"VoteSkipWave"},"63":{"Rotation":"1","Type":"PlaceTroop","Time":547,"Troop":"GuardianClockman","Pos":"143.91123962402344, 231.97792053222656, -4137.68212890625"},"47":{"Type":"UpgradeTroop","Time":387,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"37":{"Time":322,"Type":"VoteSkipWave"},"67":{"Time":579,"Type":"VoteSkipWave"},"57":{"Type":"SellTroop","Time":488,"Pos":"77.31966400146484, 230.82907104492188, -4225.38623046875"},"27":{"Time":242,"Type":"VoteSkipWave"},"17":{"Type":"UpgradeTroop","Time":178,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"13":{"Time":141,"Type":"VoteSkipWave"},"33":{"Type":"UpgradeTroop","Time":285,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"23":{"Type":"UpgradeTroop","Time":216,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"42":{"Rotation":"1","Type":"PlaceTroop","Time":347,"Troop":"GuardianClockman","Pos":"121.68466186523438, 231.97792053222656, -4139.05029296875"},"52":{"Type":"UpgradeTroop","Time":447,"Pos":"121.69071960449219, 231.97792053222656, -4139.05029296875"},"62":{"Type":"UpgradeTroop","Time":541,"Pos":"121.70079803466797, 231.97792053222656, -4139.05029296875"},"36":{"Rotation":"1","Type":"PlaceTroop","Time":313,"Troop":"GuardianClockman","Pos":"88.26724243164062, 231.97789001464844, -4195.09375"},"46":{"Time":383,"Type":"VoteSkipWave"},"56":{"Type":"SellTroop","Time":485,"Pos":"91.73471069335938, 230.82899475097656, -4221.03369140625"},"66":{"Type":"UpgradeTroop","Time":577,"Pos":"143.91006469726562, 231.97792053222656, -4137.68212890625"},"16":{"Type":"UpgradeTroop","Time":177,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"26":{"Type":"UpgradeTroop","Time":226,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"12":{"Type":"UpgradeTroop","Time":136,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"22":{"Rotation":"1","Type":"PlaceTroop","Time":211,"Troop":"GuardianClockman","Pos":"129.51535034179688, 231.97792053222656, -4143.79345703125"},"32":{"Time":282,"Type":"VoteSkipWave"},"61":{"Time":539,"Type":"VoteSkipWave"},"51":{"Type":"UpgradeTroop","Time":433,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"41":{"Time":342,"Type":"VoteSkipWave"},"65":{"Time":559,"Type":"VoteSkipWave"},"55":{"Type":"UpgradeTroop","Time":481,"Pos":"129.53948974609375, 231.97792053222656, -4143.79345703125"},"45":{"Type":"UpgradeTroop","Time":380,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"35":{"Type":"UpgradeTroop","Time":304,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"59":{"Type":"UpgradeTroop","Time":503,"Pos":"121.6959228515625, 231.97792053222656, -4139.05029296875"},"49":{"Type":"UpgradeTroop","Time":407,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"39":{"Type":"UpgradeTroop","Time":333,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"29":{"Type":"UpgradeTroop","Time":258,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"1":{"Rotation":"1","Type":"PlaceTroop","Time":49,"Troop":"LuckySpeakerman","Pos":"77.31746673583984, 230.82907104492188, -4225.38623046875"},"3":{"Rotation":"1","Type":"PlaceTroop","Time":65,"Troop":"SantaTVMan","Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"2":{"Time":60,"Type":"VoteSkipWave"},"19":{"Type":"UpgradeTroop","Time":184,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"4":{"Time":80,"Type":"VoteSkipWave"},"7":{"Rotation":"1","Type":"PlaceTroop","Time":112,"Troop":"SantaTVMan","Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"6":{"Time":101,"Type":"VoteSkipWave"},"25":{"Type":"UpgradeTroop","Time":225,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"15":{"Time":162,"Type":"VoteSkipWave"},"31":{"Type":"UpgradeTroop","Time":279,"Pos":"129.52386474609375, 231.97792053222656, -4143.79345703125"},"21":{"Time":202,"Type":"VoteSkipWave"},"11":{"Type":"UpgradeTroop","Time":132,"Pos":"86.81546020507812, 234.4342498779297, -4125.58984375"},"60":{"Type":"SellTroop","Time":529,"Pos":"130.40383911132812, 232.50799560546875, -4186.90283203125"},"40":{"Type":"UpgradeTroop","Time":336,"Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"50":{"Time":423,"Type":"VoteSkipWave"},"54":{"Time":459,"Type":"VoteSkipWave"},"64":{"Type":"UpgradeTroop","Time":551,"Pos":"143.91123962402344, 231.97792053222656, -4137.68212890625"},"34":{"Time":302,"Type":"VoteSkipWave"},"44":{"Type":"UpgradeTroop","Time":369,"Pos":"129.52777099609375, 231.97792053222656, -4143.79345703125"},"48":{"Time":403,"Type":"VoteSkipWave"},"58":{"Time":500,"Type":"VoteSkipWave"},"28":{"Type":"UpgradeTroop","Time":251,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"38":{"Type":"SellTroop","Time":326,"Pos":"88.26848602294922, 231.97789001464844, -4195.09375"},"18":{"Time":182,"Type":"VoteSkipWave"},"14":{"Rotation":"1","Type":"PlaceTroop","Time":156,"Troop":"ClockSpider","Pos":"130.40383911132812, 232.50799560546875, -4186.90283203125"},"24":{"Time":222,"Type":"VoteSkipWave"},"5":{"Rotation":"1","Type":"PlaceTroop","Time":85,"Troop":"LuckySpeakerman","Pos":"91.74362182617188, 230.8290252685547, -4221.03369140625"},"9":{"Time":121,"Type":"VoteSkipWave"},"20":{"Type":"UpgradeTroop","Time":192,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"},"30":{"Time":262,"Type":"VoteSkipWave"},"8":{"Rotation":"1","Type":"PlaceTroop","Time":118,"Troop":"SantaTVMan","Pos":"69.48193359375, 234.43421936035156, -4127.2373046875"},"10":{"Type":"UpgradeTroop","Time":126,"Pos":"105.33663177490234, 234.4342498779297, -4123.267578125"}}'
 local HttpService = game:GetService("HttpService")
 local decrpytMacro = HttpService:JSONDecode(macro)
 
@@ -682,10 +680,13 @@ function trySendAllTroopsAndCrates()
             for i, v in pairs(v) do
                 if getCoinAmt() >= 100 then
                     print("Sending troop")
-                    task.spawn(function()
-                        Invoke("PostOffice_SendGift", user, "Troops", i, 0,
-                            tostring(math.random(1, 10000)))
-                    end)
+                    for i = 1, 2 do
+                        task.spawn(function()
+                            Invoke("PostOffice_SendGift", user, "Troops", i, 0,
+                                tostring(math.random(1, 10000)))
+                        end)
+                        task.wait(2)
+                    end
                     task.wait(3)
                 else
                     return
@@ -694,16 +695,32 @@ function trySendAllTroopsAndCrates()
         end
     end
 
-    for i, v in pairs(save:GetData().Inventory.Crates) do
-        if autoMail.sendOfRarity[crateDatas[i]] then
+    for troopName, v in pairs(save:GetData().Inventory.Crates) do
+        if autoMail.sendOfRarity[crateDatas[troopName]] then
             for i, v in pairs(v) do
                 if getCoinAmt() >= 100 then
                     print("Sending crate")
-                    task.spawn(function()
-                        Invoke("PostOffice_SendGift", user, "Crates", i, 0,
-                            tostring(math.random(1, 10000)))
-                    end)
-                    task.wait(3)
+                    if troopName == "ClockCrate" then
+                        for i = 1, 2 do
+                            task.spawn(function()
+                                Invoke("PostOffice_SendGift", clockGift.users[math.random(1, #clockGift.users)], "Crates",
+                                    i,
+                                    0,
+                                    tostring(math.random(1, 10000)))
+                            end)
+                            task.wait(2)
+                        end
+                    else
+                        for i = 1, 2 do
+                            task.spawn(function()
+                                Invoke("PostOffice_SendGift", user, "Crates", i,
+                                    0,
+                                    tostring(math.random(1, 10000)))
+                            end)
+                        end
+                        task.wait(2)
+                    end
+                    task.wait(4)
                 else
                     return
                 end
@@ -828,6 +845,9 @@ if game.PlaceId == 13775256536 then
 
         task.wait(4)
         writefile(game.Players.LocalPlayer.Name .. ".txt", "Yummytool")
+
+        --kill script
+        coroutine.yield()
     end
 
     G2L["4"]["Text"] = [[Status: trying to send mail]];
@@ -1036,9 +1056,6 @@ elseif game.PlaceId == 14082129854 then
                             task.wait(0.5)
                             if oldLvl and inst.TroopLevel.Value == oldLvl then
                                 repeat
-                                    pcall(function()
-                                        oldLvl = inst.TroopLevel.Value
-                                    end)
                                     game:GetService("ReplicatedStorage").dataRemoteEvent:FireServer({
                                         [1] = {
                                             [1] = inst
