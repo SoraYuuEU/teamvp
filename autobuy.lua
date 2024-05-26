@@ -1,11 +1,11 @@
 local toBuy = {
---["Green Laser Cameraman"] = { 1000, 300 },
+["Green Laser Cameraman"] = { 1000, 300 },
 ["Santa TV Man"] = {500, 50},
-["Clock Spider"] = {60, 50},
-["Lucky Speakerman"] = {50, 50},
---["Announcer Cameraman"] = {60, 300},
---["DJ Speakerman"] = {50, 300},
---["Leprechaun Cameraman"] = {800, 300},
+--["Clock Spider"] = {60, 50},
+--["Lucky Speakerman"] = {50, 50},
+["Announcer Cameraman"] = {60, 300},
+["DJ Speakerman"] = {50, 300},
+["Leprechaun Cameraman"] = {800, 300},
 }
 
 local items = 0
