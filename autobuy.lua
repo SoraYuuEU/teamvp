@@ -1,6 +1,11 @@
 local toBuy = {
-    ["LuckySpeakerman"] = { 50, 300 },
-    ["SantaTVMan"] = {500, 300}
+--["Green Laser Cameraman"] = { 1000, 300 },
+["Santa TV Man"] = {500, 50},
+["Clock Spider"] = {60, 50},
+["Lucky Speakerman"] = {50, 50},
+--["Announcer Cameraman"] = {60, 300},
+--["DJ Speakerman"] = {50, 300},
+--["Leprechaun Cameraman"] = {800, 300},
 }
 
 local items = 0
@@ -60,8 +65,36 @@ function getAmtOfTroop(name)
     return amt
 end
 
-for i,v in toBuy do
-    if getAmtOfTroop(i) >= v[2] then
+local data = TTD:WaitForModule("SharedSettings").TroopDatas
+local data2 = TTD:WaitForModule("SharedSettings").CrateDatas
+local datas = {}
+for k, l in next, data do
+    for i, v in pairs(l) do
+        if i == "DisplayName" then
+            datas[k] = v
+        end
+    end
+end
+
+for k, l in next, data2 do
+    for i, v in pairs(l) do
+        if i == "DisplayName" then
+            datas[k] = v
+        end
+    end
+end
+
+function convertDisplayToId(display)
+    for i, v in datas do
+        if v == display then
+            return i
+        end
+    end
+end
+
+for i, v in toBuy do
+    local name = convertDisplayToId(i)
+    if getAmtOfTroop(name) >= v[2] then
         toBuy[i] = nil
     end
 end
@@ -201,6 +234,7 @@ if game.PlaceId ~= 13775256536 then
         until 1 == true
     end
 
+    print("open market gui")
     openMarketGui()
 
     for i, v in toBuy do
@@ -209,6 +243,7 @@ if game.PlaceId ~= 13775256536 then
 
     task.spawn(function()
         task.wait(35)
+        print("hop")
         RealHop()
     end)
 
@@ -235,6 +270,7 @@ if game.PlaceId ~= 13775256536 then
 
             local buyButton = v.MainFrame.UnitInfo.Buttons.BuyUnit.BuyButton
             clickGui(buyButton)
+            print "buying"
 
             local confirmBtn
             repeat
@@ -243,9 +279,10 @@ if game.PlaceId ~= 13775256536 then
                         .MainFrame.ConfirmPopup.Options.Confirm.ConfirmButton
                 end)
             until confirmBtn ~= nil
+            print("buying pt2")
             clickGui(confirmBtn)
 
-            for i,v in toBuy do
+            for i, v in toBuy do
                 if getAmtOfTroop(i) >= v[2] then
                     toBuy[i] = nil
                 end
@@ -258,7 +295,8 @@ if game.PlaceId ~= 13775256536 then
         for i, v in toBuy do
             items = items + 1
         end
+        print(items)
     end
-
+    print "hop"
     RealHop()
 end
