@@ -1,5 +1,17 @@
+local claimAt = 2
+
+
+
+local e
+repeat
+    task.wait(0.1)
+    pcall(function() e = require(game:GetService("ReplicatedStorage").MultiboxFramework) end)
+until game:IsLoaded() and #game:GetService("ReplicatedStorage"):GetDescendants() >= 26500 and e ~= nil and e.Network and e.Replicate
+game:GetService("ReplicatedStorage"):WaitForChild("MultiboxFramework")
+
+game:GetService("ReplicatedStorage"):WaitForChild("MultiboxFramework")
+task.wait(1)
 local TTD = require(game:GetService("ReplicatedStorage").MultiboxFramework)
-local save = TTD.Replicate:WaitForReplica("PlayerData-" .. game:GetService("Players").LocalPlayer.UserId)
 local Network = TTD.Network
 
 local Invoke = Network.Invoke; local GetFunc = getupvalue(Invoke, 1)
@@ -22,39 +34,13 @@ coroutine.wrap(function()
     setidentity(8)
 end)()
 
-
-local amt = 999
-local troopsToSend = {
-    ""
-}
-
-local cratesToSend = {
-    "ClockCrate"
-}
-
-
-
-local n = 0
-for i, v in pairs(save:GetData().Inventory.Troops) do
-    if table.find(troopsToSend, i) then
-        for i, v in pairs(v) do
-            n = n + 1
-             if n <= amt then
-            Fire("AddItemToTrade", "Troops", i)
-
-            end
+while task.wait() do
+    if #Invoke("PostOffice_GetInbox") >= claimAt then
+        local tab = {}
+        for i, v in pairs(Invoke("PostOffice_GetInbox")) do
+            table.insert(tab, v._id)
         end
+        Invoke("PostOffice_BulkClaimPackages", tab)
     end
-end
-
-for i, v in pairs(save:GetData().Inventory.Crates) do
-    if table.find(cratesToSend, i) then
-        for i, v in pairs(v) do
-            n = n + 1
-             if n <= amt then
-            Fire("AddItemToTrade", "Crates", i)
-
-            end
-        end
-    end
+    task.wait(5)
 end
