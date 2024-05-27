@@ -1,9 +1,10 @@
 local toBuy = {
-    ["Santa TV Man"] = { 500, 55 }, -- max price to buy for, max amt of troop in inventory
-    ['Green Laser Cameraman'] = { 1200, 55 },
-	['Announcer Cameraman'] = { 60, 55 },
-	['DJ Speakerman'] = { 60, 55 },
-	['Leprechaun Cameraman'] = { 800, 55 },
+["Santa TV Man"] = { 500, 55 }, -- max price to buy for, max amt of troop in inventory
+['Green Laser Cameraman'] = { 1200, 55 },
+['Announcer Cameraman'] = { 60, 55 },
+['DJ Speakerman'] = { 60, 55 },
+['Leprechaun Cameraman'] = { 800, 55 },
+['Lucky Speakerman'] = { 50, 55 },
 }
 
 local items = 0
