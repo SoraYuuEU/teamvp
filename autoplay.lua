@@ -29,7 +29,7 @@ getgenv().clockGift = { -- randomly selected from list
 getgenv().autoEasterPass = {
     enabled = true,
     goToLobbyAfterReachedEggs = 3000, -- go back to lobby once you get this amt of eggs
-    convertEggsToGems = false,
+    convertEggsToGems = true,
     claimClockQuests = true,
 }
 
@@ -42,7 +42,7 @@ getgenv().autoBoost = { -- this will use boosts when it runs out
 }
 
 getgenv().autoMail = {
-    enabled = false,         -- for gems
+    enabled = true,         -- for gems
     sendTroopsEnabled = false,
     idToSendTo = 5456141384, -- for gems
     idToSendTo2 = 5456141595,        -- this is for troops
@@ -800,7 +800,7 @@ if game.PlaceId == 13775256536 then
         tryClaimEasterPass()
     end)
     task.wait(1)
-    --buyMaxGemsWithEggs()
+    buyMaxGemsWithEggs()
     task.wait(1)
 
     task.spawn(function()
