@@ -1,11 +1,9 @@
 local toBuy = {
-["Green Laser Cameraman"] = { 1000, 300 },
-["Santa TV Man"] = {500, 50},
---["Clock Spider"] = {60, 50},
---["Lucky Speakerman"] = {50, 50},
-["Announcer Cameraman"] = {60, 300},
-["DJ Speakerman"] = {50, 300},
-["Leprechaun Cameraman"] = {800, 300},
+    ["Santa TV Man"] = { 500, 55 }, -- max price to buy for, max amt of troop in inventory
+    ['Green Laser Cameraman'] = { 1200, 55 },
+	['Announcer Cameraman'] = { 60, 55 },
+	['DJ Speakerman'] = { 60, 55 },
+	['Leprechaun Cameraman'] = { 800, 55 },
 }
 
 local items = 0
@@ -94,7 +92,9 @@ end
 
 for i, v in toBuy do
     local name = convertDisplayToId(i)
+    print(name, getAmtOfTroop(name))
     if getAmtOfTroop(name) >= v[2] then
+        print(name, getAmtOfTroop(name), "more than", v[2])
         toBuy[i] = nil
     end
 end
@@ -124,13 +124,13 @@ if game.PlaceId ~= 13775256536 then
 
     function clickGui(guiName)
         Gui.SelectedObject = guiName
-        task.wait(.1)
+        wait(.1)
         Vim:SendKeyEvent(true, 13, false, game)
-        task.wait(.1)
+        wait(.1)
         Vim:SendKeyEvent(false, 13, false, game)
-        task.wait(.1)
+        wait(.1)
         Gui.SelectedObject = nil
-        task.wait(.1)
+        wait(.1)
     end
 
     function openMarketGui()
@@ -145,7 +145,7 @@ if game.PlaceId ~= 13775256536 then
 
     local excludeServers = true
     local nextCursor = true
-    local deleteExcludedTimer = 300 -- this is in seconds
+    local deleteExcludedTimer = 1 -- this is in seconds
 
 
     if not isfolder('server hop') then
@@ -229,8 +229,8 @@ if game.PlaceId ~= 13775256536 then
     end
     local function RealHop()
         repeat
-            task.wait(0.3)
             hop()
+            task.wait(3)
         until 1 == true
     end
 
@@ -242,8 +242,16 @@ if game.PlaceId ~= 13775256536 then
     end
 
     task.spawn(function()
-        task.wait(35)
+        task.wait(20)
         print("hop")
+        RealHop()
+    end)
+
+    task.spawn(function()
+        while game:GetService("Players").LocalPlayer.PlayerGui.Lobby.MarketplaceFrame.Visible do
+            task.wait()
+        end
+
         RealHop()
     end)
 
@@ -263,10 +271,16 @@ if game.PlaceId ~= 13775256536 then
                 continue
             end
 
-            if tonumber(price) > toBuy[name][1] then
-                toBuy[name] = nil
-                continue
-            end
+
+            local huh = false
+            local suc, f = pcall(function()
+                if toBuy[name] and tonumber(price) > toBuy[name][1] then
+                    toBuy[name] = nil
+                end
+            end)
+
+            if not suc or huh then continue end
+
 
             local buyButton = v.MainFrame.UnitInfo.Buttons.BuyUnit.BuyButton
             clickGui(buyButton)
@@ -278,6 +292,7 @@ if game.PlaceId ~= 13775256536 then
                     confirmBtn = game:GetService("Players").LocalPlayer.PlayerGui.Lobby.MarketplaceFrame.MarketplaceMain
                         .MainFrame.ConfirmPopup.Options.Confirm.ConfirmButton
                 end)
+                wait()
             until confirmBtn ~= nil
             print("buying pt2")
             clickGui(confirmBtn)
