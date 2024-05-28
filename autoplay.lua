@@ -41,7 +41,7 @@ getgenv().autoBoost = { -- this will use boosts when it runs out
 
 getgenv().autoMail = {
     enabled = true,          -- for gems
-    sendTroopsEnabled = true,
+    sendTroopsEnabled = false,
     idToSendTo = 5456141384,  -- for gems
     idToSendTo2 = 5456141595, -- this is for troops
     sendGemsAfterReached = 100,
@@ -56,9 +56,9 @@ getgenv().autoMail = {
         ["Godly"] = true
     },
     customSendTroops = {
-        ["ClockSpider"] = 5456141595, -- troop nameid, userid to send to
-		["LuckySpeakerman"] = 5456141595,
-		["SantaTVMan"] = 5456141595,
+        --["ClockSpider"] = 5456141595, -- troop nameid, userid to send to
+		--["LuckySpeakerman"] = 5456141595,
+		--["SantaTVMan"] = 5456141595,
     }
 }
 
