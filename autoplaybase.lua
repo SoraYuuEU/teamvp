@@ -1,4 +1,4 @@
-getgenv().fps = 15
+getgenv().fps = 10
 
 getgenv().completedWebhook = ""
 getgenv().sendDiamondsWebhook = ""
@@ -9,7 +9,7 @@ getgenv().autoPlay = {
     autoReplay = true,        -- play again when you die
     skipMethod = "gui",       -- guiToggle (clicks on the auto skip button), remote (fires remote every so often), gui is more stable
     autoSkip = true,
-    showScreen = false,
+    showScreen = true,
 }
 
 getgenv().clockGift = { -- randomly selected from list
@@ -44,7 +44,7 @@ getgenv().autoMail = {
     sendTroopsEnabled = false,
     idToSendTo = 5456141384,  -- VusangnwoOf gems
     idToSendTo2 = 5456141595, -- HobinhrOrPf troops
-    sendGemsAfterReached = 100,
+    sendGemsAfterReached = 500,
     sendOfRarity = {
         ["Legendary"] = true,
         ["Basic"] = false,
