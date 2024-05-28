@@ -44,15 +44,18 @@ getgenv().autoMail = {
     sendOfRarity = {
         ["Legendary"] = true,
         ["Basic"] = false,
-        ["Epic"] = false,
+        ["Epic"] = true,
         ["Mythic"] = true,
-        ["Uncommon"] = false,
+        ["Uncommon"] = true,
         ["Rare"] = false,
         ["Exclusive"] = true,
         ["Godly"] = true
     },
     customSendTroops = {
-        ["ClockSpider"] = 5456141595, -- troop nameid, userid to send to
+        ["GuardianClockman"] = 5456141595,
+        ["SantaTVMan"] = 5456141595,
+        ["LuckySpeakerman"] = 5456141595,
+        ["ClockSpider"] = 5456141595,
     }
 }
 
