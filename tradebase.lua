@@ -23,7 +23,7 @@ coroutine.wrap(function()
 end)()
 
 
-local amt = 100
+local amt = 68
 local troopsToSend = {
     --"SantaTVMan",
     "LuckySpeakerman"
