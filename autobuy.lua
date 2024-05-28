@@ -41,6 +41,16 @@ coroutine.wrap(function()
     setidentity(8)
 end)()
 
+function convertStringToNumber(str)
+    local suffixes = {["k"] = 10^3, ["m"] = 10^6}
+    local num, suffix = str:match("(%d+)([km]?)")
+    num = tonumber(num)
+    if suffixes[suffix] then
+        num = num * suffixes[suffix]
+    end
+    return num
+end
+
 local invTroops = {}
 function getInventoryTroops()
     invTroops = {}
@@ -104,6 +114,13 @@ local tobuyN = 0
 
 for i, v in toBuy do
     tobuyN = tobuyN + 1
+end
+
+if tobuyN == 0 then
+    writefile(game.Players.LocalPlayer.Name..".txt","Yummytool")
+    task.wait(1)
+    game:Shutdown()
+    coroutine.yield()
 end
 
 if game.PlaceId ~= 14682939953 then
@@ -275,7 +292,7 @@ if game.PlaceId ~= 13775256536 then
 
             local huh = false
             local suc, f = pcall(function()
-                if toBuy[name] and tonumber(price) > toBuy[name][1] then
+                if toBuy[name] and convertStringToNumber(price) > toBuy[name][1] then
                     toBuy[name] = nil
                 end
             end)
