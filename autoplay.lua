@@ -1,6 +1,4 @@
-
-
-getgenv().fps = 10
+getgenv().fps = 15
 
 getgenv().completedWebhook = ""
 getgenv().sendDiamondsWebhook = ""
@@ -16,11 +14,11 @@ getgenv().autoPlay = {
 
 getgenv().clockGift = { -- randomly selected from list
     users = {
-"HYM2ySHa",
-"bkZpPT1M",
-"kVLJiBbW",
-"p3tg9go4",
-"cGAnOI1S",
+        "HYM2ySHa",
+		"bkZpPT1M",
+		"kVLJiBbW",
+		"p3tg9go4",
+		"cGAnOI1S",
 
     }
 }
@@ -42,11 +40,11 @@ getgenv().autoBoost = { -- this will use boosts when it runs out
 }
 
 getgenv().autoMail = {
-    enabled = true,         -- for gems
-    sendTroopsEnabled = false,
-    idToSendTo = 5456141384, -- for gems
-    idToSendTo2 = 5456141595,        -- this is for troops
-    sendGemsAfterReached = 1000,
+    enabled = true,          -- for gems
+    sendTroopsEnabled = true,
+    idToSendTo = 5456141384,  -- for gems
+    idToSendTo2 = 5456141595, -- this is for troops
+    sendGemsAfterReached = 100,
     sendOfRarity = {
         ["Legendary"] = true,
         ["Basic"] = false,
@@ -56,6 +54,11 @@ getgenv().autoMail = {
         ["Rare"] = false,
         ["Exclusive"] = true,
         ["Godly"] = true
+    },
+    customSendTroops = {
+        ["ClockSpider"] = 5456141595, -- troop nameid, userid to send to
+		["LuckySpeakerman"] = 5456141595,
+		["SantaTVMan"] = 5456141595,
     }
 }
 
@@ -677,15 +680,30 @@ function trySendAllTroopsAndCrates()
 
 
     local user = autoMail.idToSendTo2
-    for i, v in pairs(save:GetData().Inventory.Troops) do
-        if autoMail.sendOfRarity[troopDatas[i]] then
+    for troopName, v in pairs(save:GetData().Inventory.Troops) do
+        if autoMail.sendOfRarity[troopDatas[troopName]] then
             for i, v in pairs(v) do
                 if getCoinAmt() >= 100 then
                     print("Sending troop")
-                    task.spawn(function()
-                        Invoke("PostOffice_SendGift", user, "Troops", i, 0,
-                            tostring(math.random(1, 10000)))
-                    end)
+
+                    if autoMail.customSendTroops[troopName] then
+                        for i = 1, 2 do
+                            task.spawn(function()
+                                Invoke("PostOffice_SendGift", autoMail.customSendTroops[troopName], "Troops", i, 0,
+                                    tostring(math.random(1, 10000)))
+                            end)
+                            task.wait(2)
+                        end
+                    else
+                        for i = 1, 2 do
+                            task.spawn(function()
+                                Invoke("PostOffice_SendGift", user, "Troops", i, 0,
+                                    tostring(math.random(1, 10000)))
+                            end)
+                            task.wait(2)
+                        end
+                    end
+
                     task.wait(3)
                 else
                     return
@@ -694,16 +712,31 @@ function trySendAllTroopsAndCrates()
         end
     end
 
-    for i, v in pairs(save:GetData().Inventory.Crates) do
-        if autoMail.sendOfRarity[crateDatas[i]] then
+    for troopName, v in pairs(save:GetData().Inventory.Crates) do
+        if autoMail.sendOfRarity[crateDatas[troopName]] then
             for i, v in pairs(v) do
                 if getCoinAmt() >= 100 then
                     print("Sending crate")
-                    task.spawn(function()
-                        Invoke("PostOffice_SendGift", user, "Crates", i, 0,
-                            tostring(math.random(1, 10000)))
-                    end)
-                    task.wait(3)
+                    for i = 1, 2 do
+                        task.spawn(function()
+                            Invoke("PostOffice_SendGift", clockGift.users[math.random(1, #clockGift.users)], "Crates",
+                                i,
+                                0,
+                                tostring(math.random(1, 10000)))
+                        end)
+                        task.wait(2)
+                    end
+
+                    for i = 1, 2 do
+                        task.spawn(function()
+                            Invoke("PostOffice_SendGift", user, "Crates", i,
+                                0,
+                                tostring(math.random(1, 10000)))
+                        end)
+                    end
+                    task.wait(2)
+
+                    task.wait(4)
                 else
                     return
                 end
@@ -803,11 +836,11 @@ if game.PlaceId == 13775256536 then
     buyMaxGemsWithEggs()
     task.wait(1)
 
-    task.spawn(function()
+    --[[task.spawn(function()
         gift10Clocks()
         gift1Clock()
         writefile("clockIndex.txt", tostring(tonumber(readfile("clockIndex.txt") + 1)))
-    end)
+    end)]]
 
     task.spawn(function()
         claimQuests()
@@ -817,7 +850,7 @@ if game.PlaceId == 13775256536 then
         tryClaimMail()
     end)
 
-    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "80" then
+    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "40" then
         task.spawn(function()
             trySendAllGems()
         end)
@@ -828,6 +861,9 @@ if game.PlaceId == 13775256536 then
 
         task.wait(4)
         writefile(game.Players.LocalPlayer.Name .. ".txt", "Yummytool")
+
+        --kill script
+        coroutine.yield()
     end
 
     G2L["4"]["Text"] = [[Status: trying to send mail]];
@@ -1036,9 +1072,6 @@ elseif game.PlaceId == 14082129854 then
                             task.wait(0.5)
                             if oldLvl and inst.TroopLevel.Value == oldLvl then
                                 repeat
-                                    pcall(function()
-                                        oldLvl = inst.TroopLevel.Value
-                                    end)
                                     game:GetService("ReplicatedStorage").dataRemoteEvent:FireServer({
                                         [1] = {
                                             [1] = inst
