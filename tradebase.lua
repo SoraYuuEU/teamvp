@@ -25,7 +25,7 @@ end)()
 
 local amt = 100
 local troopsToSend = {
-    "SantaTVMan",
+    --"SantaTVMan",
     "LuckySpeakerman"
 }
 
