@@ -1,4 +1,4 @@
-getgenv().fps = 15
+getgenv().fps = 10
 
 getgenv().completedWebhook = ""
 getgenv().sendDiamondsWebhook = ""
