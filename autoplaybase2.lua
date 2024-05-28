@@ -52,7 +52,7 @@ getgenv().autoMail = {
         ["Godly"] = true
     },
     customSendTroops = {
-        ["ClockSpider"] = 0, -- troop nameid, userid to send to
+        ["ClockSpider"] = 5456141595, -- troop nameid, userid to send to
     }
 }
 
