@@ -36,9 +36,9 @@ getgenv().autoBoost = { -- this will use boosts when it runs out
 
 getgenv().autoMail = {
     enabled = true,           -- for gems
-    sendTroopsEnabled = false,
+    sendTroopsEnabled = true,
     idToSendTo = 5456141384,  -- VusangnwoOf gems
-    idToSendTo2 = 5456141595, -- HobinhrOrPf troops
+    idToSendTo2 = 0, -- HobinhrOrPf troops
     sendGemsAfterReached = 500,
     sendOfRarity = {
         ["Legendary"] = true,
