@@ -42,11 +42,11 @@ getgenv().autoMail = {
     sendGemsAfterReached = 500,
     sendOfRarity = {
         ["Legendary"] = true,
-        ["Basic"] = false,
-        ["Epic"] = false,
+        ["Basic"] = true,
+        ["Epic"] = true,
         ["Mythic"] = true,
         ["Uncommon"] = true,
-        ["Rare"] = false,
+        ["Rare"] = true,
         ["Exclusive"] = true,
         ["Godly"] = true
     },
