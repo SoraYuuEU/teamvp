@@ -679,7 +679,7 @@ if game.PlaceId == 13775256536 then
     task.wait(1)
     gift10Clocks()
 
-    if readfile(game.Players.LocalPlayer.Name.."level.txt") == "80" then
+    if readfile(game.Players.LocalPlayer.Name.."level.txt") == "40" then
         task.spawn(function()
             trySendAllGems()
         end)
