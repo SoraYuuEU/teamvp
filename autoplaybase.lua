@@ -855,10 +855,11 @@ if game.PlaceId == 13775256536 then
         tryClaimMail()
     end)
 
-    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "80" then
-        task.spawn(function()
+     task.spawn(function()
             trySendAllGems()
         end)
+
+    if readfile(game.Players.LocalPlayer.Name .. "level.txt") == "80" then
         task.wait(1)
         task.spawn(function()
             for i = 1, 2 do
