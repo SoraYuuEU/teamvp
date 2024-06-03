@@ -675,14 +675,14 @@ if game.PlaceId == 13775256536 then
 
     tryClaimEasterPass()
     task.wait(1)
-    --buyMaxGemsWithEggs()
+    buyMaxGemsWithEggs()
     task.wait(1)
-    gift10Clocks()
-
-    if readfile(game.Players.LocalPlayer.Name.."level.txt") == "40" then
-        task.spawn(function()
+    --gift10Clocks()
+    task.spawn(function()
             trySendAllGems()
         end)
+
+    if readfile(game.Players.LocalPlayer.Name.."level.txt") == "40" then
         task.wait(1)
         task.spawn(function()
             trySendAllTroopsAndCrates()
