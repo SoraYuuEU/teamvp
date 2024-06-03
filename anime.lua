@@ -9,14 +9,20 @@ local notifyIfRarity = {
 }
 
 local codes = {
-    'subcool',
-    'sub2toadboigaming',
-    'sub2mozking',
-    'sub2karizmaqt',
-    'sub2jonaslyz',
-    'sub2riktime',
-    'sub2nagblox',
-    'release2024',
+'raidsarecool',
+'sorry4delay',
+'thanks400k',
+'dayum100m',
+'wsindach4ht',
+'200kholymoly',
+'adontop',
+'subcool',
+'sub2toadboigaming',
+'sub2mozking',
+'sub2karizmaqt',
+'sub2jonaslyz',
+'sub2riktime',
+'sub2nagblox',
 }
 
 -- wait for game load
