@@ -31,10 +31,10 @@ repeat task.wait(5) until game:IsLoaded()
 task.wait(5)
 
 -- redeem code
-for i, v in codes do
-    game:GetService("ReplicatedStorage").Remotes.UseCode:InvokeServer(v)
-    task.wait(0.1)
-end
+--for i, v in codes do
+   -- game:GetService("ReplicatedStorage").Remotes.UseCode:InvokeServer(v)
+    --task.wait(0.1)
+--end
 
 -- get gem using UI 
 local gems = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gems.TextLabel
