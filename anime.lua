@@ -1,5 +1,5 @@
 local notifyWebhook = "https://discord.com/api/webhooks/1249992250377896036/AhPQWiSsBOQ7sqWUX9f9nPoiVJHNt5ZMwmarqKCm0JfRhOiaroF4qV6Qlm0z6S8_cFsS"
-local type = "Update1" -- Update1, Standard
+local type = "Standard" -- Update1, Standard
 
 --stops if it got it
 local notifyIfRarity = {
