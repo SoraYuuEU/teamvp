@@ -1,7 +1,4 @@
-local notifyWebhook = {
-    ["Legendary"] = "https://discord.com/api/webhooks/1247746014849269811/rJoQkIFhQowY0nTh-S7Lfxte-oBibj5YSrW_k6CyHgSgO9f6jpWG90hqI56EPJ0xlWLq",
-    ["Mythic"] = "https://discord.com/api/webhooks/1247746549921087509/03K6KobirF9kHjohQrHbZjYsWCHJ3VvEi_0kUfy-W4KJ6cPfT_cLoIjUXUVuZFhVmQ4w",
-    ["Secret"] = "https://discord.com/api/webhooks/1247746617780731914/8ue96sjIFmHFnan0Hh2bIW_J-TQvP5MXLR5y_RrJ14Y43_LiFke9VgnCofsY-aukjHoP",}
+local notifyWebhook = "https://discord.com/api/webhooks/1249992250377896036/AhPQWiSsBOQ7sqWUX9f9nPoiVJHNt5ZMwmarqKCm0JfRhOiaroF4qV6Qlm0z6S8_cFsS"
 local type = "Update1" -- Update1, Standard
 
 --stops if it got it
