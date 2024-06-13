@@ -8,7 +8,7 @@ local webhooks = {
 
 local notifyIfRarity = {
     ["Rare"] = false,
-	["Epic"] = true,
+	["Epic"] = false,
     ["Legendary"] = true,
     ["Mythic"] = true,
     ["Secret"] = true,
