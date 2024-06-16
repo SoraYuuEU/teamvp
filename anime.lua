@@ -76,7 +76,7 @@ end
 
 -- summon till you cant afford
 repeat
-game:GetService("ReplicatedStorage").Remotes.Summon:InvokeServer("Standard", 1)
+game:GetService("ReplicatedStorage").Remotes.Summon:InvokeServer("Update2", 1)
 task.wait(1)
 until getGems() < 50
 
