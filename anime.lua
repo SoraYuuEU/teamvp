@@ -1,6 +1,19 @@
+local RS = game:GetService("ReplicatedStorage")
+local plrControl = require(game.ReplicatedFirst.Classes.PlayerControl)
+
+if plrControl.LocalPlayer == nil then
+    plrControl.LocalPlayerLoaded.Event:Wait()
+end
+
+repeat task.wait(0.1) until game:IsLoaded()
+
+task.wait(3)
+
+game:GetService("ReplicatedStorage").Remotes.FirstTimeSummon:InvokeServer()
+
 local webhooks = {
     ["Rare"] = "",
-    ["Epic"] = "https://discord.com/api/webhooks/1247745918132817940/3iz-dKpd8hcJWS6SDqtBZjzADbf80QPnrCaeVM9ZL17ZiQiL2BP6hXeTaYKCaFyk5yus",
+	["Epic"] = "https://discord.com/api/webhooks/1247745918132817940/3iz-dKpd8hcJWS6SDqtBZjzADbf80QPnrCaeVM9ZL17ZiQiL2BP6hXeTaYKCaFyk5yus",
     ["Legendary"] = "https://discord.com/api/webhooks/1247746014849269811/rJoQkIFhQowY0nTh-S7Lfxte-oBibj5YSrW_k6CyHgSgO9f6jpWG90hqI56EPJ0xlWLq",
     ["Mythic"] = "https://discord.com/api/webhooks/1247746549921087509/03K6KobirF9kHjohQrHbZjYsWCHJ3VvEi_0kUfy-W4KJ6cPfT_cLoIjUXUVuZFhVmQ4w",
     ["Secret"] = "https://discord.com/api/webhooks/1247746617780731914/8ue96sjIFmHFnan0Hh2bIW_J-TQvP5MXLR5y_RrJ14Y43_LiFke9VgnCofsY-aukjHoP",
@@ -34,13 +47,25 @@ local codes = {
 -- wait for game load
 repeat task.wait(5) until game:IsLoaded()
 
-task.wait(5)
+local RS = game:GetService("ReplicatedStorage")
+local plrControl = require(game.ReplicatedFirst.Classes.PlayerControl)
+
+if plrControl.LocalPlayer == nil then
+    plrControl.LocalPlayerLoaded.Event:Wait()
+end
+
+repeat task.wait(0.1) until game:IsLoaded()
+
+task.wait(3)
+
+game:GetService("ReplicatedStorage").Remotes.FirstTimeSummon:InvokeServer()
+
 
 -- redeem code
---for i, v in codes do
-    --game:GetService("ReplicatedStorage").Remotes.UseCode:InvokeServer(v)
-    --task.wait(0.1)
---end
+for i, v in codes do
+    game:GetService("ReplicatedStorage").Remotes.UseCode:InvokeServer(v)
+    task.wait(0.1)
+end
 
 -- get gem using UI 
 local gems = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gems.TextLabel
@@ -51,7 +76,7 @@ end
 
 -- summon till you cant afford
 repeat
-game:GetService("ReplicatedStorage").Remotes.Summon:InvokeServer("Standard", 1) --Standard. Update1
+game:GetService("ReplicatedStorage").Remotes.Summon:InvokeServer("Standard", 1)
 task.wait(1)
 until getGems() < 50
 
